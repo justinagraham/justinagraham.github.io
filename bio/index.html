@@ -177,7 +177,7 @@
   }
 
   .now-section:hover {
-    border-color: rgba(226, 176, 74, 0.3);
+    border-color: rgba(108, 92, 231, 0.3);
   }
 
   .section-label {
@@ -196,7 +196,7 @@
     color: var(--accent);
   }
 
-  .label-now {
+  .label-present {
     background: rgba(226, 176, 74, 0.15);
     color: var(--accent);
   }
@@ -254,6 +254,65 @@
   .company-years {
     font-size: 0.65rem;
     color: var(--text-dim);
+  }
+
+  /* ── Ventures ── */
+  .ventures-grid {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .venture-card {
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.08), rgba(108, 92, 231, 0.03));
+    border: 1px solid rgba(108, 92, 231, 0.25);
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .venture-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .venture-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-bright);
+    display: block;
+  }
+
+  .venture-tag {
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-top: 0.3rem;
+    display: block;
+  }
+
+  .now-section .ventures-stealth {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #555568;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .ventures-stealth a {
+    color: var(--text-bright);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-style: normal;
+  }
+
+  .ventures-stealth a:hover {
+    color: var(--accent);
   }
 
   /* ── Links ── */
@@ -346,7 +405,7 @@
       <div class="hero-text">
         <h1>Justin Graham</h1>
         <p class="tagline-roles">Technical cofounder. Architect. Systems engineer.</p>
-        <p class="tagline-blurb">Building cross-platform native applications and game engines for over thirty years.</p>
+        <p class="tagline-blurb">Building cross-platform native applications and game engines for over thirty years. Platform abstraction, graphics, audio, networking, simulation, parallel computing, scripting, content pipelines, build systems, and tooling. The systems layer. The parts that do the work.</p>
       </div>
     </div>
   </div>
@@ -361,17 +420,23 @@
     </p>
   </div>
 
-  <div class="identity-block">
-    <p>
-      My career is engine architecture. <span class="systems-list">Platform abstraction, graphics, audio, networking, simulation, parallel computing, scripting, content pipelines, build systems, and tooling.</span> The systems layer. <span class="closing">The parts that do the work.</span>
-    </p>
-  </div>
 
   <div class="now-section">
-    <span class="section-label label-now">Now</span>
+    <span class="section-label label-present">Present</span>
     <p>
-      Now I'm building NJiN, a cross-platform modern game engine. I cofounded AdFab, a playable ad company built on NJiN technology. Thirty years of experience has culminated here, a compact performant game engine that runs everywhere.
+      Today I'm building NJiN, a cross-platform modern game engine. I cofounded AdFab, a playable ad company built on NJiN technology. Thirty years of experience has culminated here, a compact performant game engine that runs everywhere.
     </p>
+    <div class="ventures-grid">
+      <div class="venture-card">
+        <span class="venture-name">NJiN</span>
+        <span class="venture-tag">Game Engine</span>
+      </div>
+      <div class="venture-card">
+        <span class="venture-name">AdFab</span>
+        <span class="venture-tag">Playable Ads</span>
+      </div>
+    </div>
+    <p class="ventures-stealth">In stealth. <a href="https://und3rwr4ps.com">Inquiries welcome.</a></p>
   </div>
 
   <div class="companies-section">
@@ -384,8 +449,6 @@
       <div class="company-card"><span class="company-name">SDKBox</span><span class="company-years">2 years</span></div>
       <div class="company-card"><span class="company-name">Unity</span><span class="company-years">7 years</span></div>
       <div class="company-card"><span class="company-name">Gallium Studios</span><span class="company-years">1 year</span></div>
-      <div class="company-card"><span class="company-name">NJiN</span><span class="company-years">current</span></div>
-      <div class="company-card"><span class="company-name">AdFab</span><span class="company-years">current</span></div>
     </div>
   </div>
 
