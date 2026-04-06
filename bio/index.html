@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin Graham</title>
+<meta property="og:title" content="Justin Graham">
+<meta property="og:description" content="Technical cofounder. Architect. Systems engineer. Building cross-platform native applications and game engines for over thirty years.">
+<meta property="og:type" content="profile">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-card-hover: #181824;
+    --border: #1e1e2e;
+    --text: #e0e0e8;
+    --text-dim: #8888a0;
+    --text-bright: #ffffff;
+    --accent: #6c5ce7;
+    --accent-glow: rgba(108, 92, 231, 0.3);
+    --accent2: #e2b04a;
+    --accent2-glow: rgba(226, 176, 74, 0.15);
+    --accent3: #fd79a8;
+    --accent4: #fdcb6e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 50%, var(--accent-glow) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.05); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .hero-photo {
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 60px rgba(108, 92, 231, 0.08);
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text-bright);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text .tagline-roles {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-text .tagline-blurb {
+    font-size: clamp(0.9rem, 1.8vw, 1rem);
+    color: var(--text-dim);
+    font-weight: 300;
+  }
+
+  /* ── Main Content ── */
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+
+  /* ── Career Narrative ── */
+  .career-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.3s;
+  }
+
+  .career-section:hover {
+    border-color: rgba(108, 92, 231, 0.3);
+  }
+
+  .career-section p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--text);
+  }
+
+  /* ── Identity Block ── */
+  .identity-block {
+    background: linear-gradient(135deg, rgba(108, 92, 231, 0.08), rgba(226, 176, 74, 0.05));
+    border: 1px solid rgba(108, 92, 231, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .identity-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--accent));
+    border-radius: 3px 0 0 3px;
+  }
+
+  .identity-block p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-bright);
+    line-height: 1.8;
+  }
+
+  .identity-block .systems-list {
+    color: var(--text);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .identity-block .closing {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── Now Section ── */
+  .now-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.3s;
+  }
+
+  .now-section:hover {
+    border-color: rgba(226, 176, 74, 0.3);
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+  }
+
+  .label-career {
+    background: rgba(108, 92, 231, 0.15);
+    color: var(--accent);
+  }
+
+  .label-now {
+    background: rgba(226, 176, 74, 0.15);
+    color: var(--accent);
+  }
+
+  .now-section p {
+    font-size: 1.05rem;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* ── Companies Grid ── */
+  .companies-section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .companies-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-dim);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+
+  .companies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .company-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    transition: border-color 0.2s;
+  }
+
+  .company-card:hover {
+    border-color: var(--accent);
+  }
+
+  .company-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-bright);
+  }
+
+  .company-years {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Links ── */
+  .bio-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .bio-links a {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .bio-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.2s;
+  }
+
+  .bio-links a:hover {
+    color: var(--accent);
+  }
+
+  .bio-links a:hover::after {
+    width: 100%;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+    }
+
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .hero-photo {
+      width: 140px;
+    }
+
+    .career-section,
+    .identity-block,
+    .now-section {
+      padding: 1.8rem;
+    }
+
+    .companies-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .bio-links {
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="content">
+    <div class="hero-content">
+      <img src="photo.jpeg" alt="Justin Graham" class="hero-photo">
+      <div class="hero-text">
+        <h1>Justin Graham</h1>
+        <p class="tagline-roles">Technical cofounder. Architect. Systems engineer.</p>
+        <p class="tagline-blurb">Building cross-platform native applications and game engines for over thirty years.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="career-section">
+    <span class="section-label label-career">Career</span>
+    <p>
+      I started at LucasArts in 1990, where I cut my teeth porting the SCUMM engine to 32-bit protected mode and spent a decade there in systems and lead engineering roles. At Maxis, I built the audio engine for Spore and was lead audio engineer on The Sims 2 and SimCity 4. At Zynga, I led development on mobile titles and worked on web games at massive scale. I cofounded Elf Farm Games and built a cross-platform C++ engine from scratch , we shipped two kids games, one featured by Apple. I contributed to the Cocos2d-x engine at Chukong and cofounded SDKBox, a turn-key SDK integration toolchain for Unity, Unreal, and Cocos2d-x. I spent seven years at Unity in analytics, simulation infrastructure, sensor systems, and distributed rendering. I hold a patent for that work. At Gallium Studios, I built backend infrastructure and AI systems for Proxi , avatars instilled with player memories and brought to life through generative AI.
+    </p>
+  </div>
+
+  <div class="identity-block">
+    <p>
+      My career is engine architecture. <span class="systems-list">Platform abstraction, graphics, audio, networking, simulation, parallel computing, scripting, content pipelines, build systems, and tooling.</span> The systems layer. <span class="closing">The parts that do the work.</span>
+    </p>
+  </div>
+
+  <div class="now-section">
+    <span class="section-label label-now">Now</span>
+    <p>
+      Now I'm building NJiN, a cross-platform modern game engine. I cofounded AdFab, a playable ad company built on NJiN technology. Thirty years of experience has culminated here, a compact performant game engine that runs everywhere.
+    </p>
+  </div>
+
+  <div class="companies-section">
+    <div class="companies-grid">
+      <div class="company-card"><span class="company-name">LucasArts</span><span class="company-years">10 years</span></div>
+      <div class="company-card"><span class="company-name">EA / Maxis</span><span class="company-years">7 years</span></div>
+      <div class="company-card"><span class="company-name">Zynga</span><span class="company-years">4 years</span></div>
+      <div class="company-card"><span class="company-name">Elf Farm Games</span><span class="company-years">2 years</span></div>
+      <div class="company-card"><span class="company-name">Chukong</span><span class="company-years">2 years</span></div>
+      <div class="company-card"><span class="company-name">SDKBox</span><span class="company-years">2 years</span></div>
+      <div class="company-card"><span class="company-name">Unity</span><span class="company-years">7 years</span></div>
+      <div class="company-card"><span class="company-name">Gallium Studios</span><span class="company-years">1 year</span></div>
+      <div class="company-card"><span class="company-name">NJiN</span><span class="company-years">current</span></div>
+      <div class="company-card"><span class="company-name">AdFab</span><span class="company-years">current</span></div>
+    </div>
+  </div>
+
+  <div class="bio-links">
+    <a href="https://github.com/mannewalis">GitHub</a>
+    <a href="https://linkedin.com/in/justinagraham">LinkedIn</a>
+    <a href="mailto:justinagraham@gmail.com">Email</a>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 Justin Graham
+  </div>
+
+</div>
+
+</body>
+</html>
